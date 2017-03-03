@@ -2332,81 +2332,54 @@ Version 3.2 HI-TECH Software Intermediate Code
 "91
 [e $U 284  ]
 {
-[; ;main.c: 92: case 1: snd_data[0] = 0x10; break;
+[; ;main.c: 92: case 0xA0: ADCON0 = 0b00000001;
 "92
 [e :U 285 ]
-[e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> -> 16 `i `uc ]
-[e $U 283  ]
-[; ;main.c: 93: case 2: snd_data[0] = 0x20; break;
-"93
-[e :U 286 ]
-[e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> -> 32 `i `uc ]
-[e $U 283  ]
-[; ;main.c: 94: case 3: snd_data[0] = 0x30;snd_data[1] = 0x31; break;
-"94
-[e :U 287 ]
-[e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> -> 48 `i `uc ]
-[e = *U + &U _snd_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> -> 49 `i `uc ]
-[e $U 283  ]
-[; ;main.c: 95: case 4: snd_data[0] = 0x40;snd_data[1] = 0x41; break;
-"95
-[e :U 288 ]
-[e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> -> 64 `i `uc ]
-[e = *U + &U _snd_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> -> 65 `i `uc ]
-[e $U 283  ]
-[; ;main.c: 96: case 0xA0: ADCON0 = 0b00000001;
-"96
-[e :U 289 ]
 [e = _ADCON0 -> -> 1 `i `uc ]
-[; ;main.c: 97: break;
-"97
+[; ;main.c: 93: break;
+"93
 [e $U 283  ]
-[; ;main.c: 98: case 0xA4: ADCON0 = 0b00001101;
-"98
-[e :U 290 ]
+[; ;main.c: 94: case 0xA4: ADCON0 = 0b00001101;
+"94
+[e :U 286 ]
 [e = _ADCON0 -> -> 13 `i `uc ]
-[; ;main.c: 99: break;
-"99
+[; ;main.c: 95: break;
+"95
 [e $U 283  ]
-[; ;main.c: 100: case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; break;
-"100
-[e :U 291 ]
+[; ;main.c: 96: case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; break;
+"96
+[e :U 287 ]
 [e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> & _temp -> -> 255 `i `ui `uc ]
 [e = *U + &U _snd_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> >> & _temp -> 65280 `ui -> 8 `i `uc ]
 [e $U 283  ]
-[; ;main.c: 101: default: snd_data[0] = rcv_data[0]*2; break;
-"101
-[e :U 292 ]
-[e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> * -> *U + &U _rcv_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _rcv_data `ui `ux `i -> 2 `i `uc ]
+[; ;main.c: 97: default: break;
+"97
+[e :U 288 ]
 [e $U 283  ]
-"102
+"98
 }
-[; ;main.c: 102: };
+[; ;main.c: 98: };
 [e $U 283  ]
 "91
 [e :U 284 ]
-[e [\ *U + &U _rcv_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _rcv_data `ui `ux , $ -> -> 1 `i `uc 285
- , $ -> -> 2 `i `uc 286
- , $ -> -> 3 `i `uc 287
- , $ -> -> 4 `i `uc 288
- , $ -> -> 160 `i `uc 289
- , $ -> -> 164 `i `uc 290
- , $ -> -> 173 `i `uc 291
- 292 ]
-"102
+[e [\ *U + &U _rcv_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _rcv_data `ui `ux , $ -> -> 160 `i `uc 285
+ , $ -> -> 164 `i `uc 286
+ , $ -> -> 173 `i `uc 287
+ 288 ]
+"98
 [e :U 283 ]
-"103
+"99
 }
 [e :U 282 ]
-[; ;main.c: 103: };
-"104
+[; ;main.c: 99: };
+"100
 }
 [e :U 279 ]
 "88
 [e $U 280  ]
 [e :U 281 ]
-[; ;main.c: 104: }
-[; ;main.c: 105: }
-"105
+[; ;main.c: 100: }
+[; ;main.c: 101: }
+"101
 [e :UE 278 ]
 }

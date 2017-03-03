@@ -10,9 +10,9 @@ CND_CONF=12F1822
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/12F1822-I2C-ADCONV.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=12F1822-I2C-ADCONV.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=12f1822-i2c-adconv.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/12F1822-I2C-ADCONV.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=12F1822-I2C-ADCONV.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=12f1822-i2c-adconv/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/12f1822-i2c-adconv.x/bin
+makeDirectory ${TMPDIR}/12f1822-i2c-adconv/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/12f1822-i2c-adconv.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/12f1822-i2c-adconv.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/12f1822-i2c-adconv.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/12f1822-i2c-adconv.tar *
 checkReturnCode
 
 # Cleanup

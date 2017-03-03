@@ -89,16 +89,12 @@ void main() {
         temp = adconv(); // RA4ピンの3番ピン(AN3)から半固定抵抗の値を読み込む
         if(I2C_ReceiveCheck() >= 1) {  // 受信バイト数確認
             switch(rcv_data[0]) {
-                case 1: snd_data[0] = 0x10; break;
-                case 2: snd_data[0] = 0x20; break;
-                case 3: snd_data[0] = 0x30;snd_data[1] = 0x31; break;
-                case 4: snd_data[0] = 0x40;snd_data[1] = 0x41; break;
                 case 0xA0:  ADCON0 = 0b00000001; // アナログ変換情報設定(AN0から読込む)
                             break;
                 case 0xA4:  ADCON0 = 0b00001101; // アナログ変換情報設定(AN3から読込む)
                             break;
                 case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8;  break; // 変換結果を書き出す
-                default: snd_data[0] = rcv_data[0]*2; break;
+                default: break;
             };
         };
      } //while(1)
