@@ -2352,34 +2352,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> & _temp -> -> 255 `i `ui `uc ]
 [e = *U + &U _snd_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> >> & _temp -> 65280 `ui -> 8 `i `uc ]
 [e $U 283  ]
-[; ;main.c: 97: default: break;
 "97
-[e :U 288 ]
-[e $U 283  ]
-"98
 }
-[; ;main.c: 98: };
+[; ;main.c: 97: };
 [e $U 283  ]
 "91
 [e :U 284 ]
 [e [\ *U + &U _rcv_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _rcv_data `ui `ux , $ -> -> 160 `i `uc 285
  , $ -> -> 164 `i `uc 286
  , $ -> -> 173 `i `uc 287
- 288 ]
-"98
+ 283 ]
+"97
 [e :U 283 ]
-"99
+"98
 }
 [e :U 282 ]
-[; ;main.c: 99: };
-"100
+[; ;main.c: 98: };
+"99
 }
 [e :U 279 ]
 "88
 [e $U 280  ]
 [e :U 281 ]
+[; ;main.c: 99: }
 [; ;main.c: 100: }
-[; ;main.c: 101: }
-"101
+"100
 [e :UE 278 ]
 }

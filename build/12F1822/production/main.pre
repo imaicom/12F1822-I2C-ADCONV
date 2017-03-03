@@ -3003,7 +3003,6 @@ break;
 case 0xA4: ADCON0 = 0b00001101;
 break;
 case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; break;
-default: break;
 };
 };
 }

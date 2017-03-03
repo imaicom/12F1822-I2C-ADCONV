@@ -94,7 +94,6 @@ void main() {
                 case 0xA4:  ADCON0 = 0b00001101; // アナログ変換情報設定(AN3から読込む)
                             break;
                 case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8;  break; // 変換結果を書き出す
-                default: break;
             };
         };
      } //while(1)
