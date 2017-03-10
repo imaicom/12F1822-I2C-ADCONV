@@ -3008,7 +3008,6 @@ temp2 = adconv();
 
 snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8;
 snd_data[2] = temp2 & 0xFF; snd_data[3] = (temp2 & 0xFF00) >> 8;
-
 };
 if(I2C_ReceiveCheck() >= 1) {
 switch(rcv_data[0]) {

@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.41 build -162212810 
-                                                                                               Fri Mar 10 15:13:22 2017
+                                                                                               Fri Mar 10 15:24:13 2017
 
 Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250102
      1                           	processor	12F1822
@@ -635,8 +635,8 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
    621  00C8  00A5               	movwf	_snd_data+3
    622  00C9                     l926:	
    623                           
-   624                           ;main.c: 103: };
-   625                           ;main.c: 104: if(I2C_ReceiveCheck() >= 1) {
+   624                           ;main.c: 102: };
+   625                           ;main.c: 103: if(I2C_ReceiveCheck() >= 1) {
    626  00C9  2120               	fcall	_I2C_ReceiveCheck
    627  00CA  0874               	movf	?_I2C_ReceiveCheck+1,w
    628  00CB  3A80               	xorlw	128
@@ -652,45 +652,45 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
    638  00D4  28ED               	goto	l946
    639  00D5  288E               	goto	l902
    640  00D6                     l930:	
-   641                           ;main.c: 106: case 0xA0: ADCON0 = 0b00000001;
+   641                           ;main.c: 105: case 0xA0: ADCON0 = 0b00000001;
    642                           
-   643                           ;main.c: 105: switch(rcv_data[0]) {
+   643                           ;main.c: 104: switch(rcv_data[0]) {
    644                           
    645  00D6  3001               	movlw	1
    646  00D7  28D9               	goto	L1
    647  00D8                     l934:	
-   648                           ;main.c: 109: case 0xA4: ADCON0 = 0b00001101;
+   648                           ;main.c: 108: case 0xA4: ADCON0 = 0b00001101;
    649                           
-   650                           ;main.c: 108: break;
+   650                           ;main.c: 107: break;
    651                           
-   652                           ;main.c: 107: mode = 0;
+   652                           ;main.c: 106: mode = 0;
    653                           
    654  00D8  300D               	movlw	13
    655  00D9                     L1:	
    656  00D9  0021               	movlb	1	; select bank1
    657  00DA  009D               	movwf	29	;volatile
    658                           
-   659                           ;main.c: 110: mode = 0;
+   659                           ;main.c: 109: mode = 0;
    660  00DB  0020               	movlb	0	; select bank0
    661  00DC  01BA               	clrf	main@mode
    662  00DD  01BB               	clrf	main@mode+1
    663                           
-   664                           ;main.c: 111: break;
+   664                           ;main.c: 110: break;
    665  00DE  288E               	goto	l902
    666  00DF                     l938:	
-   667                           ;main.c: 112: case 0xAA:
+   667                           ;main.c: 111: case 0xAA:
    668                           
    669                           
-   670                           ;main.c: 113: mode = 1;
+   670                           ;main.c: 112: mode = 1;
    671  00DF  3001               	movlw	1
    672  00E0  00BA               	movwf	main@mode
    673  00E1  3000               	movlw	0
    674  00E2  00BB               	movwf	main@mode+1
    675                           
-   676                           ;main.c: 114: break;
+   676                           ;main.c: 113: break;
    677  00E3  288E               	goto	l902
    678  00E4                     l940:	
-   679                           ;main.c: 116: case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; 
+   679                           ;main.c: 115: case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; 
       +                          break;
    680                           
    681  00E4  083C               	movf	main@temp,w
@@ -702,7 +702,7 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
    687  00EA  0878               	movf	??_main,w
    688  00EB  00A3               	movwf	_snd_data+1
    689                           
-   690                           ;main.c: 117: };
+   690                           ;main.c: 116: };
    691  00EC  288E               	goto	l902
    692  00ED                     l946:	
    693  00ED  0020               	movlb	0	; select bank0
@@ -730,7 +730,7 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
    715  00FA  28E4               	goto	l940
    716  00FB  288E               	goto	l902
    717                           
-   718                           ;main.c: 118: };
+   718                           ;main.c: 117: };
    719  00FC  288E               	goto	l902
    720  00FD                     __end_of_main:	
    721                           
@@ -1445,7 +1445,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.41 build -162212810 
-Symbol Table                                                                                   Fri Mar 10 15:13:22 2017
+Symbol Table                                                                                   Fri Mar 10 15:24:13 2017
 
               __CFG_CP$OFF 0000                         l31 0139                         l37 00FF  
                       l902 008E                        l930 00D6                        l906 0099  

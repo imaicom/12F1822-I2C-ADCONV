@@ -2361,78 +2361,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 "101
 [e = *U + &U _snd_data * -> -> -> 2 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> & _temp2 -> -> 255 `i `ui `uc ]
 [e = *U + &U _snd_data * -> -> -> 3 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> >> & _temp2 -> 65280 `ui -> 8 `i `uc ]
-"103
+"102
 }
 [e :U 283 ]
-[; ;main.c: 103: };
-[; ;main.c: 104: if(I2C_ReceiveCheck() >= 1) {
-"104
+[; ;main.c: 102: };
+[; ;main.c: 103: if(I2C_ReceiveCheck() >= 1) {
+"103
 [e $ ! >= ( _I2C_ReceiveCheck ..  -> 1 `i 284  ]
 {
-[; ;main.c: 105: switch(rcv_data[0]) {
-"105
+[; ;main.c: 104: switch(rcv_data[0]) {
+"104
 [e $U 286  ]
 {
-[; ;main.c: 106: case 0xA0: ADCON0 = 0b00000001;
-"106
+[; ;main.c: 105: case 0xA0: ADCON0 = 0b00000001;
+"105
 [e :U 287 ]
 [e = _ADCON0 -> -> 1 `i `uc ]
-[; ;main.c: 107: mode = 0;
-"107
+[; ;main.c: 106: mode = 0;
+"106
 [e = _mode -> 0 `i ]
-[; ;main.c: 108: break;
-"108
+[; ;main.c: 107: break;
+"107
 [e $U 285  ]
-[; ;main.c: 109: case 0xA4: ADCON0 = 0b00001101;
-"109
+[; ;main.c: 108: case 0xA4: ADCON0 = 0b00001101;
+"108
 [e :U 288 ]
 [e = _ADCON0 -> -> 13 `i `uc ]
-[; ;main.c: 110: mode = 0;
-"110
+[; ;main.c: 109: mode = 0;
+"109
 [e = _mode -> 0 `i ]
-[; ;main.c: 111: break;
+[; ;main.c: 110: break;
+"110
+[e $U 285  ]
+[; ;main.c: 111: case 0xAA:
 "111
-[e $U 285  ]
-[; ;main.c: 112: case 0xAA:
-"112
 [e :U 289 ]
-[; ;main.c: 113: mode = 1;
-"113
+[; ;main.c: 112: mode = 1;
+"112
 [e = _mode -> 1 `i ]
-[; ;main.c: 114: break;
-"114
+[; ;main.c: 113: break;
+"113
 [e $U 285  ]
-[; ;main.c: 116: case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; break;
-"116
+[; ;main.c: 115: case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; break;
+"115
 [e :U 290 ]
 [e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> & _temp -> -> 255 `i `ui `uc ]
 [e = *U + &U _snd_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> >> & _temp -> 65280 `ui -> 8 `i `uc ]
 [e $U 285  ]
-"117
+"116
 }
-[; ;main.c: 117: };
+[; ;main.c: 116: };
 [e $U 285  ]
-"105
+"104
 [e :U 286 ]
 [e [\ *U + &U _rcv_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _rcv_data `ui `ux , $ -> -> 160 `i `uc 287
  , $ -> -> 164 `i `uc 288
  , $ -> -> 170 `i `uc 289
  , $ -> -> 173 `i `uc 290
  285 ]
-"117
+"116
 [e :U 285 ]
-"118
+"117
 }
 [e :U 284 ]
-[; ;main.c: 118: };
-"119
+[; ;main.c: 117: };
+"118
 }
 [e :U 279 ]
 "89
 [e $U 280  ]
 [e :U 281 ]
+[; ;main.c: 118: }
 [; ;main.c: 119: }
-[; ;main.c: 120: }
-"120
+"119
 [e :UE 278 ]
 }
