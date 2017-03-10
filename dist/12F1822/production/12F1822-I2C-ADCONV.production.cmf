@@ -11,22 +11,22 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcotUucKO.obj
+$/tmp/xcjRcA21t.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 62 62 1 2
 config CONFIG 0 8007 8007 2 2
 $dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 cinit CODE 0 63 63 B 2
-text1 CODE 0 BB BB 23 2
-text2 CODE 0 10C 10C 15 2
-text3 CODE 0 DE DE 17 2
-text4 CODE 0 F5 F5 17 2
-maintext CODE 0 6E 6E 4D 2
+text1 CODE 0 FD FD 23 2
+text2 CODE 0 14E 14E 15 2
+text3 CODE 0 120 120 17 2
+text4 CODE 0 137 137 17 2
+maintext CODE 0 6E 6E 8F 2
 cstackCOMMON COMMON 1 70 70 9 1
-cstackBANK0 BANK0 1 32 32 8 1
+cstackBANK0 BANK0 1 32 32 C 1
 intentry CODE 0 4 4 5E 2
 bssBANK0 BANK0 1 20 20 12 1
-clrtext CODE 0 121 121 6 2
+clrtext CODE 0 163 163 6 2
 bssCOMMON COMMON 1 79 79 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -34,14 +34,14 @@ bssCOMMON COMMON 1 79 79 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 3A-6F 1
+RAM 3E-6F 1
 RAM A0-BF 1
-BANK0 3A-6F 1
+BANK0 3E-6F 1
 BANK1 A0-BF 1
 CONST 1-3 2
-CONST 127-7FF 2
+CONST 169-7FF 2
 ENTRY 1-3 2
-ENTRY 127-7FF 2
+ENTRY 169-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -65,9 +65,9 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 201A-206F 1
+STACK 201E-206F 1
 CODE 1-3 2
-CODE 127-7FF 2
+CODE 169-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-16F 1
@@ -82,9 +82,9 @@ BIGRAM 2000-206F 1
 COMMON 7B-7D 1
 EEDATA F000-F0FF 2
 STRCODE 1-3 2
-STRCODE 127-7FF 2
+STRCODE 169-7FF 2
 STRING 1-3 2
-STRING 127-7FF 2
+STRING 169-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -99,20 +99,20 @@ STRING 127-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-63 cinit CODE >589:/tmp/xcQACkVfv
-63 cinit CODE >592:/tmp/xcQACkVfv
-63 cinit CODE >631:/tmp/xcQACkVfv
-64 cinit CODE >632:/tmp/xcQACkVfv
-65 cinit CODE >636:/tmp/xcQACkVfv
-66 cinit CODE >637:/tmp/xcQACkVfv
-67 cinit CODE >638:/tmp/xcQACkVfv
-68 cinit CODE >639:/tmp/xcQACkVfv
-69 cinit CODE >640:/tmp/xcQACkVfv
-6A cinit CODE >641:/tmp/xcQACkVfv
-6B cinit CODE >647:/tmp/xcQACkVfv
-6B cinit CODE >649:/tmp/xcQACkVfv
-6C cinit CODE >650:/tmp/xcQACkVfv
-6D cinit CODE >651:/tmp/xcQACkVfv
+63 cinit CODE >589:/tmp/xc30jNllJ
+63 cinit CODE >592:/tmp/xc30jNllJ
+63 cinit CODE >631:/tmp/xc30jNllJ
+64 cinit CODE >632:/tmp/xc30jNllJ
+65 cinit CODE >636:/tmp/xc30jNllJ
+66 cinit CODE >637:/tmp/xc30jNllJ
+67 cinit CODE >638:/tmp/xc30jNllJ
+68 cinit CODE >639:/tmp/xc30jNllJ
+69 cinit CODE >640:/tmp/xc30jNllJ
+6A cinit CODE >641:/tmp/xc30jNllJ
+6B cinit CODE >647:/tmp/xc30jNllJ
+6B cinit CODE >649:/tmp/xc30jNllJ
+6C cinit CODE >650:/tmp/xc30jNllJ
+6D cinit CODE >651:/tmp/xc30jNllJ
 4 intentry CODE >43:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
 4 intentry CODE >28:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
 9 intentry CODE >34:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
@@ -144,64 +144,77 @@ E intentry CODE >37:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
 5B intentry CODE >80:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
 5D intentry CODE >81:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
 5E intentry CODE >83:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-F5 text4 CODE >39:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-F5 text4 CODE >40:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-FF text4 CODE >41:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-107 text4 CODE >40:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-DE text3 CODE >113:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-DE text3 CODE >116:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-E0 text3 CODE >117:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-E5 text3 CODE >118:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-E9 text3 CODE >119:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-EE text3 CODE >120:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-F0 text3 CODE >123:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-10C text2 CODE >91:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-10C text2 CODE >93:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-10F text2 CODE >94:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-111 text2 CODE >95:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-112 text2 CODE >97:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-114 text2 CODE >98:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-116 text2 CODE >99:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-118 text2 CODE >100:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-119 text2 CODE >101:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-11A text2 CODE >102:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-11B text2 CODE >103:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-11D text2 CODE >104:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-11E text2 CODE >105:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-120 text2 CODE >106:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
-BB text1 CODE >54:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-BB text1 CODE >57:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-BD text1 CODE >58:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-BF text1 CODE >59:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-C7 text1 CODE >60:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-D9 text1 CODE >61:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+137 text4 CODE >39:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+137 text4 CODE >40:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+141 text4 CODE >41:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+149 text4 CODE >40:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+120 text3 CODE >113:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+120 text3 CODE >116:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+122 text3 CODE >117:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+127 text3 CODE >118:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+12B text3 CODE >119:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+130 text3 CODE >120:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+132 text3 CODE >123:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+14E text2 CODE >91:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+14E text2 CODE >93:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+151 text2 CODE >94:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+153 text2 CODE >95:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+154 text2 CODE >97:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+156 text2 CODE >98:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+158 text2 CODE >99:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+15A text2 CODE >100:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+15B text2 CODE >101:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+15C text2 CODE >102:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+15D text2 CODE >103:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+15F text2 CODE >104:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+160 text2 CODE >105:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+162 text2 CODE >106:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/skI2Cslave.c
+FD text1 CODE >54:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+FD text1 CODE >57:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+FF text1 CODE >58:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+101 text1 CODE >59:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+109 text1 CODE >60:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+11B text1 CODE >61:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
 6E maintext CODE >64:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-6E maintext CODE >67:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-71 maintext CODE >70:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-72 maintext CODE >73:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-75 maintext CODE >76:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-78 maintext CODE >80:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-7A maintext CODE >82:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-7C maintext CODE >83:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-81 maintext CODE >84:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-86 maintext CODE >86:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-8B maintext CODE >89:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-91 maintext CODE >90:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-9E maintext CODE >92:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-A0 maintext CODE >94:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-A3 maintext CODE >95:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-A4 maintext CODE >96:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-AD maintext CODE >97:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-AE maintext CODE >91:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-BA maintext CODE >88:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
-121 clrtext CODE >620:/tmp/xcQACkVfv
-121 clrtext CODE >621:/tmp/xcQACkVfv
-122 clrtext CODE >622:/tmp/xcQACkVfv
-122 clrtext CODE >623:/tmp/xcQACkVfv
-123 clrtext CODE >624:/tmp/xcQACkVfv
-124 clrtext CODE >625:/tmp/xcQACkVfv
-125 clrtext CODE >626:/tmp/xcQACkVfv
-126 clrtext CODE >627:/tmp/xcQACkVfv
+6E maintext CODE >66:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+71 maintext CODE >68:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+74 maintext CODE >71:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+75 maintext CODE >74:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+78 maintext CODE >77:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+7B maintext CODE >81:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+7D maintext CODE >83:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+7F maintext CODE >84:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+84 maintext CODE >85:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+89 maintext CODE >87:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+8E maintext CODE >90:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+99 maintext CODE >91:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+9D maintext CODE >92:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+A0 maintext CODE >93:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+A5 maintext CODE >94:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+AB maintext CODE >96:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+AE maintext CODE >97:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+B3 maintext CODE >98:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+B9 maintext CODE >100:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+C1 maintext CODE >101:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+C9 maintext CODE >104:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+D6 maintext CODE >106:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+D8 maintext CODE >109:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+DB maintext CODE >110:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+DE maintext CODE >111:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+DF maintext CODE >113:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+E3 maintext CODE >114:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+E4 maintext CODE >116:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+EC maintext CODE >117:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+ED maintext CODE >105:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+FC maintext CODE >89:/Users/mizuko/MPLABXProjects/12F1822-I2C-ADCONV/main.c
+163 clrtext CODE >620:/tmp/xc30jNllJ
+163 clrtext CODE >621:/tmp/xc30jNllJ
+164 clrtext CODE >622:/tmp/xc30jNllJ
+164 clrtext CODE >623:/tmp/xc30jNllJ
+165 clrtext CODE >624:/tmp/xc30jNllJ
+166 clrtext CODE >625:/tmp/xc30jNllJ
+167 clrtext CODE >626:/tmp/xc30jNllJ
+168 clrtext CODE >627:/tmp/xc30jNllJ
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -225,20 +238,20 @@ __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _Rdtp 79 0 COMMON 1 bssCOMMON dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _Sdtp 7A 0 COMMON 1 bssCOMMON dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcotUucKO.obj
+___sp 0 0 STACK 2 stack /tmp/xcjRcA21t.obj
 _main DC 0 CODE 0 maintext dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 btemp 7E 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-start C4 0 CODE 0 init /tmp/xcotUucKO.obj
+start C4 0 CODE 0 init /tmp/xcjRcA21t.obj
 __size_of_main 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 ?_adconv 73 0 COMMON 1 cstackCOMMON dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 CODE 0 functab /tmp/xcotUucKO.obj
-intlevel1 0 0 CODE 0 functab /tmp/xcotUucKO.obj
-intlevel2 0 0 CODE 0 functab /tmp/xcotUucKO.obj
-intlevel3 0 0 CODE 0 functab /tmp/xcotUucKO.obj
-intlevel4 0 0 CODE 0 functab /tmp/xcotUucKO.obj
-intlevel5 0 0 CODE 0 functab /tmp/xcotUucKO.obj
+intlevel0 0 0 CODE 0 functab /tmp/xcjRcA21t.obj
+intlevel1 0 0 CODE 0 functab /tmp/xcjRcA21t.obj
+intlevel2 0 0 CODE 0 functab /tmp/xcjRcA21t.obj
+intlevel3 0 0 CODE 0 functab /tmp/xcjRcA21t.obj
+intlevel4 0 0 CODE 0 functab /tmp/xcjRcA21t.obj
+intlevel5 0 0 CODE 0 functab /tmp/xcjRcA21t.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Hfunctab 0 0 CODE 0 functab -
@@ -252,24 +265,24 @@ _ANSELA 18C 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _BCL1IE 493 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _BCL1IF 93 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 Delay_ms@i 76 0 COMMON 1 cstackCOMMON dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-__end_of_adconv 1BC 0 CODE 0 text1 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__end_of_adconv 240 0 CODE 0 text1 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 _rcv_data 2A 0 BANK0 1 bssBANK0 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _OPTION_REG 95 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-_Delay_ms 1EA 0 CODE 0 text4 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+_Delay_ms 26E 0 CODE 0 text4 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 start_initialization C6 0 CODE 0 cinit dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _snd_data 22 0 BANK0 1 bssBANK0 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _OSCCON 99 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-__end_of_Delay_ms 218 0 CODE 0 text4 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__end_of_Delay_ms 29C 0 CODE 0 text4 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _GO_nDONE 4E9 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-clear_ram0 242 0 CODE 0 clrtext dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+clear_ram0 2C6 0 CODE 0 clrtext dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __pcstackBANK0 32 0 BANK0 1 cstackBANK0 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _SSP1IE 48B 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _SSP1IF 8B 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _rcv_flg 20 0 BANK0 1 bssBANK0 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-___int_sp 0 0 STACK 2 stack /tmp/xcotUucKO.obj
+___int_sp 0 0 STACK 2 stack /tmp/xcjRcA21t.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -332,7 +345,7 @@ __Hmaintext 0 0 ABS 0 maintext -
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10012 0 CONFIG 0 config -
-_I2C_ReceiveCheck 1BC 0 CODE 0 text3 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+_I2C_ReceiveCheck 240 0 CODE 0 text3 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 BANK2 1 bank2 -
@@ -406,16 +419,16 @@ __S0 8009 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_adconv 176 0 CODE 0 text1 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+_adconv 1FA 0 CODE 0 text1 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 InitI2C_Slave@address 73 0 COMMON 1 cstackCOMMON dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcotUucKO.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcjRcA21t.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __size_of_InterI2C 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __size_of_adconv 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-__end_of_I2C_ReceiveCheck 1EA 0 CODE 0 text3 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__end_of_I2C_ReceiveCheck 26E 0 CODE 0 text3 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -441,16 +454,18 @@ __Lbank31 0 0 BANK31 1 bank31 -
 __pmaintext DC 0 CODE 0 maintext dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-_InitI2C_Slave 218 0 CODE 0 text2 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+_InitI2C_Slave 29C 0 CODE 0 text2 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __size_of_I2C_ReceiveCheck 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __CFG_IESO$ON 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-main@temp 38 0 BANK0 1 cstackBANK0 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-stackhi 206F 0 ABS 0 - /tmp/xcotUucKO.obj
-stacklo 201A 0 ABS 0 - /tmp/xcotUucKO.obj
+main@mode 3A 0 BANK0 1 cstackBANK0 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+main@temp 3C 0 BANK0 1 cstackBANK0 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+main@temp2 38 0 BANK0 1 cstackBANK0 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+stackhi 206F 0 ABS 0 - /tmp/xcjRcA21t.obj
+stacklo 201E 0 ABS 0 - /tmp/xcjRcA21t.obj
 I2C_ReceiveCheck@ans 75 0 COMMON 1 cstackCOMMON dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 adconv@temp 75 0 COMMON 1 cstackCOMMON dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
@@ -470,10 +485,10 @@ __CFG_STVREN$ON 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.productio
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 176 0 CODE 0 text1 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-__ptext2 218 0 CODE 0 text2 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-__ptext3 1BC 0 CODE 0 text3 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-__ptext4 1EA 0 CODE 0 text4 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__ptext1 1FA 0 CODE 0 text1 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__ptext2 29C 0 CODE 0 text2 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__ptext3 240 0 CODE 0 text3 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__ptext4 26E 0 CODE 0 text4 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -492,8 +507,8 @@ _SSP1BUF 211 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _SSP1MSK 213 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Hend_init C6 0 CODE 0 end_init -
 InterI2C@x 72 0 COMMON 1 cstackCOMMON dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-__end_of_InitI2C_Slave 242 0 CODE 0 text2 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
-__end_of_main 176 0 CODE 0 maintext dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__end_of_InitI2C_Slave 2C6 0 CODE 0 text2 dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
+__end_of_main 1FA 0 CODE 0 maintext dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 _TRISA 8C 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
@@ -529,7 +544,7 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/12F1822/production/12F1822-I2C-ADCONV.production.
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 B 1
-intentry 0 4 8 123 2
+intentry 0 4 8 165 2
 reset_vec 0 0 0 1 2
-bssBANK0 1 20 20 1A 1
+bssBANK0 1 20 20 1E 1
 config 0 8007 1000E 2 2

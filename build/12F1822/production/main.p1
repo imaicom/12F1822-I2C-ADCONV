@@ -2289,93 +2289,150 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 "65
 [v _temp `ui ~T0 @X0 1 a ]
-[; ;main.c: 65: unsigned int temp;
-[; ;main.c: 67: OSCCON = 0b01110000;
-"67
+[v _temp2 `ui ~T0 @X0 1 a ]
+"66
+[v _mode `i ~T0 @X0 1 a ]
+[; ;main.c: 65: unsigned int temp,temp2;
+[; ;main.c: 66: int mode = 0;
+[e = _mode -> 0 `i ]
+[; ;main.c: 68: OSCCON = 0b01110000;
+"68
 [e = _OSCCON -> -> 112 `i `uc ]
-[; ;main.c: 70: OPTION_REG = 0b00000000;
-"70
+[; ;main.c: 71: OPTION_REG = 0b00000000;
+"71
 [e = _OPTION_REG -> -> 0 `i `uc ]
-[; ;main.c: 73: ANSELA = 0b00010001;
-"73
+[; ;main.c: 74: ANSELA = 0b00010001;
+"74
 [e = _ANSELA -> -> 17 `i `uc ]
-[; ;main.c: 76: TRISA = 0b00011111;
-"76
+[; ;main.c: 77: TRISA = 0b00011111;
+"77
 [e = _TRISA -> -> 31 `i `uc ]
-[; ;main.c: 80: ADCON1 = 0b10010000;
-"80
+[; ;main.c: 81: ADCON1 = 0b10010000;
+"81
 [e = _ADCON1 -> -> 144 `i `uc ]
-[; ;main.c: 82: ADCON0 = 0b00001101;
-"82
-[e = _ADCON0 -> -> 13 `i `uc ]
-[; ;main.c: 83: Delay_ms(1);
+[; ;main.c: 83: ADCON0 = 0b00001101;
 "83
-[e ( _Delay_ms (1 -> -> 1 `i `ui ]
-[; ;main.c: 84: InitI2C_Slave(8);
+[e = _ADCON0 -> -> 13 `i `uc ]
+[; ;main.c: 84: Delay_ms(1);
 "84
+[e ( _Delay_ms (1 -> -> 1 `i `ui ]
+[; ;main.c: 85: InitI2C_Slave(8);
+"85
 [e ( _InitI2C_Slave (1 -> 8 `i ]
-[; ;main.c: 86: Delay_ms(1000) ;
-"86
+[; ;main.c: 87: Delay_ms(1000) ;
+"87
 [e ( _Delay_ms (1 -> -> 1000 `i `ui ]
-[; ;main.c: 88: while(1) {
-"88
+[; ;main.c: 89: while(1) {
+"89
 [e :U 280 ]
 {
-[; ;main.c: 89: temp = adconv();
-"89
-[e = _temp ( _adconv ..  ]
-[; ;main.c: 90: if(I2C_ReceiveCheck() >= 1) {
+[; ;main.c: 90: if (mode == 0) temp = adconv();
 "90
-[e $ ! >= ( _I2C_ReceiveCheck ..  -> 1 `i 282  ]
-{
-[; ;main.c: 91: switch(rcv_data[0]) {
+[e $ ! == _mode -> 0 `i 282  ]
+[e = _temp ( _adconv ..  ]
+[e :U 282 ]
+[; ;main.c: 91: if (mode == 1) {
 "91
-[e $U 284  ]
+[e $ ! == _mode -> 1 `i 283  ]
 {
-[; ;main.c: 92: case 0xA0: ADCON0 = 0b00000001;
+[; ;main.c: 92: ADCON0 = 0b00000001;
 "92
-[e :U 285 ]
 [e = _ADCON0 -> -> 1 `i `uc ]
-[; ;main.c: 93: break;
+[; ;main.c: 93: Delay_ms(1);
 "93
-[e $U 283  ]
-[; ;main.c: 94: case 0xA4: ADCON0 = 0b00001101;
+[e ( _Delay_ms (1 -> -> 1 `i `ui ]
+[; ;main.c: 94: temp = adconv();
 "94
-[e :U 286 ]
-[e = _ADCON0 -> -> 13 `i `uc ]
-[; ;main.c: 95: break;
-"95
-[e $U 283  ]
-[; ;main.c: 96: case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; break;
+[e = _temp ( _adconv ..  ]
+[; ;main.c: 96: ADCON0 = 0b00001101;
 "96
-[e :U 287 ]
+[e = _ADCON0 -> -> 13 `i `uc ]
+[; ;main.c: 97: Delay_ms(1);
+"97
+[e ( _Delay_ms (1 -> -> 1 `i `ui ]
+[; ;main.c: 98: temp2 = adconv();
+"98
+[e = _temp2 ( _adconv ..  ]
+[; ;main.c: 100: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8;
+"100
 [e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> & _temp -> -> 255 `i `ui `uc ]
 [e = *U + &U _snd_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> >> & _temp -> 65280 `ui -> 8 `i `uc ]
-[e $U 283  ]
-"97
+[; ;main.c: 101: snd_data[2] = temp2 & 0xFF; snd_data[3] = (temp2 & 0xFF00) >> 8;
+"101
+[e = *U + &U _snd_data * -> -> -> 2 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> & _temp2 -> -> 255 `i `ui `uc ]
+[e = *U + &U _snd_data * -> -> -> 3 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> >> & _temp2 -> 65280 `ui -> 8 `i `uc ]
+"103
 }
-[; ;main.c: 97: };
-[e $U 283  ]
-"91
-[e :U 284 ]
-[e [\ *U + &U _rcv_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _rcv_data `ui `ux , $ -> -> 160 `i `uc 285
- , $ -> -> 164 `i `uc 286
- , $ -> -> 173 `i `uc 287
- 283 ]
-"97
 [e :U 283 ]
-"98
+[; ;main.c: 103: };
+[; ;main.c: 104: if(I2C_ReceiveCheck() >= 1) {
+"104
+[e $ ! >= ( _I2C_ReceiveCheck ..  -> 1 `i 284  ]
+{
+[; ;main.c: 105: switch(rcv_data[0]) {
+"105
+[e $U 286  ]
+{
+[; ;main.c: 106: case 0xA0: ADCON0 = 0b00000001;
+"106
+[e :U 287 ]
+[e = _ADCON0 -> -> 1 `i `uc ]
+[; ;main.c: 107: mode = 0;
+"107
+[e = _mode -> 0 `i ]
+[; ;main.c: 108: break;
+"108
+[e $U 285  ]
+[; ;main.c: 109: case 0xA4: ADCON0 = 0b00001101;
+"109
+[e :U 288 ]
+[e = _ADCON0 -> -> 13 `i `uc ]
+[; ;main.c: 110: mode = 0;
+"110
+[e = _mode -> 0 `i ]
+[; ;main.c: 111: break;
+"111
+[e $U 285  ]
+[; ;main.c: 112: case 0xAA:
+"112
+[e :U 289 ]
+[; ;main.c: 113: mode = 1;
+"113
+[e = _mode -> 1 `i ]
+[; ;main.c: 114: break;
+"114
+[e $U 285  ]
+[; ;main.c: 116: case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; break;
+"116
+[e :U 290 ]
+[e = *U + &U _snd_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> & _temp -> -> 255 `i `ui `uc ]
+[e = *U + &U _snd_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _snd_data `ui `ux -> >> & _temp -> 65280 `ui -> 8 `i `uc ]
+[e $U 285  ]
+"117
 }
-[e :U 282 ]
-[; ;main.c: 98: };
-"99
+[; ;main.c: 117: };
+[e $U 285  ]
+"105
+[e :U 286 ]
+[e [\ *U + &U _rcv_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _rcv_data `ui `ux , $ -> -> 160 `i `uc 287
+ , $ -> -> 164 `i `uc 288
+ , $ -> -> 170 `i `uc 289
+ , $ -> -> 173 `i `uc 290
+ 285 ]
+"117
+[e :U 285 ]
+"118
+}
+[e :U 284 ]
+[; ;main.c: 118: };
+"119
 }
 [e :U 279 ]
-"88
+"89
 [e $U 280  ]
 [e :U 281 ]
-[; ;main.c: 99: }
-[; ;main.c: 100: }
-"100
+[; ;main.c: 119: }
+[; ;main.c: 120: }
+"120
 [e :UE 278 ]
 }

@@ -2971,7 +2971,8 @@ return temp;
 }
 
 void main() {
-unsigned int temp;
+unsigned int temp,temp2;
+int mode = 0;
 
 OSCCON = 0b01110000;
 
@@ -2995,13 +2996,32 @@ InitI2C_Slave(8);
 Delay_ms(1000) ;
 
 while(1) {
+if (mode == 0) temp = adconv();
+if (mode == 1) {
+ADCON0 = 0b00000001;
+Delay_ms(1);
 temp = adconv();
+
+ADCON0 = 0b00001101;
+Delay_ms(1);
+temp2 = adconv();
+
+snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8;
+snd_data[2] = temp2 & 0xFF; snd_data[3] = (temp2 & 0xFF00) >> 8;
+
+};
 if(I2C_ReceiveCheck() >= 1) {
 switch(rcv_data[0]) {
 case 0xA0: ADCON0 = 0b00000001;
+mode = 0;
 break;
 case 0xA4: ADCON0 = 0b00001101;
+mode = 0;
 break;
+case 0xAA:
+mode = 1;
+break;
+
 case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8; break;
 };
 };

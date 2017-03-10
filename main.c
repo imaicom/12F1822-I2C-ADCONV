@@ -62,7 +62,8 @@ unsigned int adconv() {
 }
 
 void main() {
-    unsigned int temp;
+    unsigned int temp,temp2;
+    int mode = 0;
     
     OSCCON  = 0b01110000; // 内部クロックを32MHzとする
 //  OSCCON  = 0b01111010; // 内部クロックを16MHzとする
@@ -86,13 +87,32 @@ void main() {
     Delay_ms(1000) ;
 
      while(1) {
-        temp = adconv(); // RA4ピンの3番ピン(AN3)から半固定抵抗の値を読み込む
+        if (mode == 0) temp = adconv(); // RA4ピンの3番ピン(AN3)から半固定抵抗の値を読み込む
+        if (mode == 1) {
+                   ADCON0 = 0b00000001; // アナログ変換情報設定(RA0ポートのAN0から読込む)
+                    Delay_ms(1); // アナログ変換情報が設定されるまでとりあえず待つ (*1:20→5)
+                    temp = adconv();
+                    
+                    ADCON0 = 0b00001101; // アナログ変換情報設定(RA4ポートのAN3から読込む)
+                    Delay_ms(1); // アナログ変換情報が設定されるまでとりあえず待つ (*1:20→5)
+                    temp2 = adconv();
+                    
+                    snd_data[0] = temp  & 0xFF; snd_data[1] = (temp  & 0xFF00) >> 8; 
+                    snd_data[2] = temp2 & 0xFF; snd_data[3] = (temp2 & 0xFF00) >> 8; 
+//                    snd_data[2] = 0xCC; snd_data[3] = 0xDD;          
+        };
         if(I2C_ReceiveCheck() >= 1) {  // 受信バイト数確認
             switch(rcv_data[0]) {
                 case 0xA0:  ADCON0 = 0b00000001; // アナログ変換情報設定(RA0ポートのAN0から読込む)
+                            mode = 0;
                             break;
                 case 0xA4:  ADCON0 = 0b00001101; // アナログ変換情報設定(RA4ポートのAN3から読込む)
+                            mode = 0;
                             break;
+                case 0xAA: 
+                    mode = 1;
+                break;
+                    
                 case 0xAD: snd_data[0] = temp & 0xFF; snd_data[1] = (temp & 0xFF00) >> 8;  break; // 変換結果を書き出す
             };
         };
